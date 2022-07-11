@@ -21,3 +21,10 @@ Class to estimate a partition of rectangle Pi = T x I for T = [t_0,t_N] and I = 
         integrate_box_pdf: method to integrate pdf of points over subarea in Pi0 = [s,t]x[m,n]
                            for s < t and m< n, takes as arguments two list, [s,m] and [t,n]
         evaluate_pdf: method to evaluate pdf of a point in Pi, takes as argument [t,omega] in Pi
+        
+        
+        
+        
+   It is possible to use two algorithms for the Cross Entropy method, relying on two different Important Sampling distributions, being a Multi Normal or a Multinomial, so that both a continuous and a discrete solutions are provided. This can be specified through the selected functions given within the RandomParition.py module.  
+   
+   It is also possibile to implement a video or a gif of the CEM method. An toy example is given and the generated plots and gif are provided in the folder "figures".
