@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-@author: Marta Campi
-"""
+
 import numpy as np
 from datetime import datetime
 from multiprocessing import Pool
