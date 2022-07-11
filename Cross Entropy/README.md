@@ -24,3 +24,6 @@ The attributes are:
 It is possible to use two algorithms for the Cross Entropy method, relying on two different Important Sampling distributions, being a Multi Normal or a Multinomial, so that both a continuous and a discrete solutions are provided. This can be specified through the selected functions given within the RandomParition.py module.  
    
 It is also possibile to implement a video or a gif of the CEM method. An toy example is given and the generated plots and gif are provided in the folder "figures".
+
+
+An Example is provided with a Jupiter Notebook. Note that the video is provided in the figures folder. 
