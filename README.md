@@ -19,6 +19,7 @@ The paper has multiple contributions, at both methodological and applied level:
 
 ## Organization of the Repository
 The repository is organized in the following folders:
+
 1. 
 ```diff
 + Cross Entropy. 
