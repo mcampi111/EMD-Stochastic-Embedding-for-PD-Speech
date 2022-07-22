@@ -66,6 +66,7 @@ This folder contains
 
 
 
+![image description](EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.png)
 
 
 
