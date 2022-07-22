@@ -43,15 +43,17 @@ This folder contains the data used in the experiments of the paper, the code use
 + 3) System Model 1 (SM1)
 ```
 This folder contains the code required to implement SM1 in the paper.  
-Remark that for SM1 the Gaussian Process has to be calibrated on observations on the original signal interpolated through a cubic splie and denoted as $\tilde{s}(t)$ (for more details see the pdf of the paper), whose process is denoted as $\widetilde{S}(t)$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via $$S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t)$$ where, $\widetilde{S}(t)$ is treated as a GP $$\tilde{S}(t)  \sim \mathcal{GP} \left( \mu(t; \psi_{\widetilde{S}} ); k(t,t'; \theta_{\widetilde{S}} )\right)$$ with $\mu(t; \psi_{\widetilde{S}}  )$ and $k( t,t'; \theta_{\widetilde{S}}  )$ representing the mean and kernel functions respectively. The additive error $\epsilon(t)$ corresponds to a regression error based on using the spline representation $\widetilde{s}(t)$ for the representation and potentially calibration of the SM1. 
+Remark that for SM1 the Gaussian Process has to be calibrated on observations on the original signal interpolated through a cubic splie and denoted as $\tilde{s}(t)$ (for more details see the pdf of the paper), whose process is denoted as $\widetilde{S}(t)$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via $$S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t)$$ where, $\widetilde{S}(t)$ is treated as a GP $$\tilde{S}(t)  \sim \mathcal{GP} \left( \mu(t; \psi_{\widetilde{S}} ); k(t,t'; \theta_{\widetilde{S}} )\right)$$ with $\mu(t; \psi_{\widetilde{S}}  )$ and $k( t,t'; \theta_{\widetilde{S}}  )$ representing the mean and kernel functions respectively. The additive error $\epsilon(t)$ corresponds to a regression error based on using the spline representation $\widetilde{s}(t)$ for the representation and potentially calibration of the SM1.  
 The folder is organized as follows:
 1. **Notebooks**. This folder contains two notebooks: 
  - **Case_study_motivation_IMFs.ipynb**. This notebook aims to justify why a decomposition method dealing with non-stationarity and non-linearity of the data is highly required to analyse speech signals. The original speech signals' empirical covariance matrices are highly non-stationary; therefore, any standard method would not work in these settings. Moreover, the final goal is to detect fast changes signalling the presence of Parkinson's disease even at very early stages. Therefore, modelling the IMFs, i.e. the basis functions of the EMD, will be a lot more beneficial and provide more reliable and robust results to noise. Note that the second part of the notebook provides some early results conducted wiht fitting a Gaussian Process to the data using standard stationary kernel such as radial basis function (RBF), Square Exponential, etc. (see the following notebook for more information). The provided plots show results of the centered kernel target alignment (CKTA) (for more information about this measure see https://jmlr.org/papers/volume13/cortes12a/cortes12a.pdf) measuring the goodness of fit of these kernels with the data. The reader should not focus on this a lot, but the reasoning behind it is to show how the CKTA does not change across the x-axis providing different hyperparameters for the chosen kernel. Hence, this justifies the need for a more refined one, i.e. the Fisher kernel (see the paper for further details about this).
  - **Hyper_study.ipynb**. This notebook provides the kernel Gram Matrix of standard stationary kernels, which have been used in the second part of the above notebook. This is highly useful to understand how these standard structures will never be able to detect a highly complex structure as the one of the empirical covariances, particularly if fast changes must be detected to identify Parkinson's disease. 
-3. **GLRT_Test_HC_PD_Final.py**. This python file contains the code required for the GLRT testing procedure applied on SM1. There are multiple functions implemented which provide a package for the testing procedure of this methodology, including the Fisher Kernel computation procedure required to obtain the Fisher score for the final Gram Matrix. We remark that the testing procedure is given as follows:
-![image description](EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.png)
-4. **S_M1_hc_final.py**.
-5. **S_M1_pd_final.py**.
+2. **GLRT_Test_HC_PD_Final.py**. This python file contains the code required for the GLRT testing procedure applied on SM1. There are multiple functions implemented which provide a package for the testing procedure of this methodology, including the Fisher Kernel computation procedure required to obtain the Fisher score for the final Gram Matrix. We remark that the testing procedure is given as follows:
+ 
+![Optional Text](/EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.pdf)
+
+3. **S_M1_hc_final.py**.
+4. **S_M1_pd_final.py**.
 
 
 ```diff
@@ -66,8 +68,9 @@ This folder contains
 
 
 
-![image description](EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.png)
-
+<p>
+    <img src="/EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.pdf" width="220" height="240" />
+</p>
 
 
 
