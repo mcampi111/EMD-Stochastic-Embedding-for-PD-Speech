@@ -16,6 +16,7 @@ The paper has multiple contributions, at both methodological and applied level:
 4. The cross-entropy method is introduced in this context to find an optimal time-frequency partition which is fully data-adaptive. 
 5. A novel solution to speech diagnostics for Parkinson's disease diagnostics and disease progression quantification is developed, which, when compared to state-of-the-art existing methods, is shown to be more sensitive and accurate for both the detection of early onset of Parkinson's disease as well as the quantification of disease progression. The solution is ultimately based on the stochastic EMD representations developed via the MKL GP model representations class.
 
+## Motivations For Parkinson's Detection.
 
 ## Organization of the Repository
 The repository is organized in the following folders:
