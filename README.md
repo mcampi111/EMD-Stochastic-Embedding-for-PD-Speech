@@ -24,6 +24,7 @@ The repository is organized in the following folders:
 ```diff
 + 1) Cross Entropy 
 ```
+This folder contains the code required for the implementation of an optimal partition of  time-frequency plane as presented in the main paper. The cross-entropy method is implemented and a python class for the algorithm is provided.  
 This folder is organized as follows:
 1.  **figures**. This folder containes the figures produced in the notebook Example.ipynb and a gif showing the video of the optimization of the Cross-Entropy method.
 2. **Example.ipynb**. This notebook provides a toy example showing how to use the package and the obtained results.
@@ -51,21 +52,34 @@ The folder is organized as follows:
 2. **GLRT_Test_HC_PD_Final.py**. This python file contains the code required for the GLRT testing procedure applied on SM1. There are multiple functions implemented which provide a package for this methodology, including the Fisher Kernel computation procedure required to obtain the Fisher score for the final Gram Matrix. Remark that the testing procedure is given as follows:
  
 <p align="center">
-    <img src="https://i.postimg.cc/3R25KScm/Testing-Procedure-png.png)" width="520" height="460" />
+    <img src="https://i.postimg.cc/3R25KScm/Testing-Procedure-png.png)" width="590" height="460" />
 </p>
 
-3. **S_M1_hc_final.py**. This python file provides the procedure for the fitting of the ARIMA models required for the derivation of the Fisher Kernel. For more details see the paper. Remark that the fitting procedure is given as follows:
+3. **S_M1_hc_final.py** and **S_M1_pd_final.py**. This python files provides the procedure for the fitting of the ARIMA models required for the derivation of the Fisher Kernel (healthy and sick patients). For more details see the paper. Remark that the fitting procedure is given as follows:
+
 <p align="center">
-    <img src="https://i.postimg.cc/3R25KScm/Fisher_Score_Vector_2_png.png)" width="520" height="460" />
+    <img src="https://i.postimg.cc/Vkmb8vKk/Fisher-Score-Vector-2-png.png)" width="590" height="460" />
 </p>
-
-4. **S_M1_pd_final.py**.
 
 
 ```diff
 + 4) System Model 2 
 ```
-This folder contains
+This folder contains the code required to implement SM2 in the paper.  
+After the EMD is applied to the signal $\widetilde{s}(t)$ and the set of basis functions are extracted, each IMF $\gamma_l(t)$ will be considered as the realised path of the stochastic process denoted as $\Gamma_l(t)$ and the one for the residual $r(t)$ denoted as $R(t)$. This will produce the following stochastic embedding of the EMD given as
+
+<p align="center">
+    <img src="https://i.postimg.cc/0jdTSVDm/SM2-tikz.jpg)" width="590" height="190" />
+</p>
+
+The SM2 representation of the original stochastic process for $S(t)$ is then given by the GP $$S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t)$$
+with $$\widetilde{S}(t)  \stackrel{d}{=} \sum_{l=1}^L  \Gamma_l(t) + R(t)$$ where $\epsilon(t) \sim N(0,\sigma_{\epsilon})$ and $\Gamma_l(t)$ represents the GP for IMF $l$ and there are $l = 1, \dots, L$ of them and $R(t)$ represents the GP on the residual tendency component. This general structure will form the basic structure for the two stochastic embeddings proposed for the EMD method and we will refer to these two models as System Model 2 (SM2) and System Model 3 (SM3). The resulting model is still a GP model given as follows $$\tilde{S}(t)  \sim \mathcal{GP} \left( \sum_{l=1}^L\mu(t; \psi_{\Gamma_l}) + \mu(t; \psi_{R}); \sum_{l=1}^L k( t,t'; \theta_{\Gamma_l} ) + k( t,t'; \theta_{R} )+\sigma_{\epsilon}\delta_{t,t'}\right)$$.  
+The folder contains the Code folder, which is organized as follows:
+1. **GLRT_Test_HC_PD_IMFs_male_parallel_Final.py** and **GLRT_Test_HC_PD_IMFs_female_parallel_Final.py**. 
+2. **S_M2_hc_female.py** and **S_M2_hc_male.py**. This python files provides the procedure for the fitting of the ARIMA models required for the derivation of the Fisher Kernel (healthy patients only - female and male) on the IMFs. For more details see the paper.
+3. **S_M2_pd_female.py** and **S_M2_pd_male.py**. This python files provides the procedure for the fitting of the ARIMA models required for the derivation of the Fisher Kernel (sick patients only - female and male) on the IMFs. For more details see the paper.
+
+
 
 ```diff
 + 5) System Model 3 
