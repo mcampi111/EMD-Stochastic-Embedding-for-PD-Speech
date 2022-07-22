@@ -1,8 +1,7 @@
 # Stochastic-Embedding-of-EMD-with-Application-in-Parkinson-s-Disease-Speech
 This repository is linked to the methodology developed in the paper with title
 
-**"Stochastic Embedding of Empirical Mode Decomposition with Application in Parkinson's Disease Speech Diagnostics"**.
-
+**"Stochastic Embedding of Empirical Mode Decomposition with Application in Parkinson's Disease Speech Diagnostics"**. This paper is provided at this url https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3923615.
 
 ## **Abstract**
 
@@ -15,6 +14,17 @@ The paper has multiple contributions, at both methodological and applied level:
 3. A second, localised stochastic solution, is also developed that defines an optimal set of band-limited basis functions stochastic model representations providing the following advantages: (1) one can focus on modelling specific bandwidths which might be significant for the application of interest; (2) one can formulate a set of basis functions whose marginal distributions are closer to a stationary distribution, compared to the original IMFs. Modelling the covariance function of such basis functions through a certain kernel is less challenging and will provide a more efficient solution for the MKL GP model representation.
 4. The cross-entropy method is introduced in this context to find an optimal time-frequency partition which is fully data-adaptive. 
 5. A novel solution to speech diagnostics for Parkinson's disease diagnostics and disease progression quantification is developed, which, when compared to state-of-the-art existing methods, is shown to be more sensitive and accurate for both the detection of early onset of Parkinson's disease as well as the quantification of disease progression. The solution is ultimately based on the stochastic EMD representations developed via the MKL GP model representations class.
+
+
+## Organization of the Repository
+The repository is organized in the following folders:
+1. Cross Entropy. In this folder, the python class RandomPartition.py is provided. This class allows one to contruct an optimal partition of the time-frequency plane as presented in the main body of the paper. There are two options for the Importante Sampling distribution. One could pick a discrete distribution, i.e. a Multinomial, as provided in the paper. This is higly suggested as the one best performing in our experiments. Alternatively, one could also rely on a continuous distribution, i.e. a Truncated Normal. A notebook, i.e. Example.ipynb, with a toy example showing how to use the package and the obtained results is provided. A folder with the figures produced in the example and a gif showing a video of the optimization is also provided. 
+2. Data
+3. System Model 1
+4. System Model 2
+5. System Model 3
+
+
 
 
 
