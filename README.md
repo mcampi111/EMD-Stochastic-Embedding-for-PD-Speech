@@ -39,9 +39,18 @@ This folder contains the data used in the experiments on the paper, the code use
 6. **Training_Testing_segments.ipynb**. This notebook provides the preparation of training and testing sets.
 7. **Training_Testing_segments_IMFs.ipynb**. This notebook  provides the preparation of training and testing sets for the IMFs extracted over the segments.
 ```diff
-+ 3) System Model 1 
++ 3) System Model 1 (SM1)
 ```
-This folder contains
+This folder contains the code require to implement SM1 in the paper. Remark that for SM1 the Gaussian Process has to be calibrated on observations of the original signal interpolated through a cubic splie and denoted as $$\tilde{s}(t)$$ (for more details see the pdf of the paper), whose process is denoted as $$\widetilde{s}(t)$$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via
+$$ 
+S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t)
+$$
+where, $\widetilde{S}(t)$ is treated as a GP
+$$
+\tilde{S}(t)  \sim \mathcal{GP} \left( \mu(t; \bm{\psi}_{\widetilde{S}}); k( t,t'; \bm{\theta}_{\widetilde{S}} )\right),
+$$
+with $$ \mu(t; \bm{\psi}_{\widetilde{S}})$$ and $$k( t,t'; \bm{\theta}_{\widetilde{S}} )$$ representing the mean and kernel functions respectively. The additive error $$\epsilon(t)$$ corresponds to a regression error based on using the spline representation $\widetilde{s}(t)$ for the representation and potentially calibration of the SM1. 
+
 
 ```diff
 + 4) System Model 2 
