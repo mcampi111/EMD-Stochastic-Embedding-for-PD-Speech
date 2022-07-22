@@ -50,7 +50,7 @@ The folder is organized as follows:
  - **Hyper_study.ipynb**. This notebook provides the kernel Gram Matrix of standard stationary kernels, which have been used in the second part of the above notebook. This is highly useful to understand how these standard structures will never be able to detect a highly complex structure as the one of the empirical covariances, particularly if fast changes must be detected to identify Parkinson's disease. 
 2. **GLRT_Test_HC_PD_Final.py**. This python file contains the code required for the GLRT testing procedure applied on SM1. There are multiple functions implemented which provide a package for the testing procedure of this methodology, including the Fisher Kernel computation procedure required to obtain the Fisher score for the final Gram Matrix. We remark that the testing procedure is given as follows:
  
-![Optional Text](/EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.pdf)
+![Optional Text](/EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure_png.png)
 
 3. **S_M1_hc_final.py**.
 4. **S_M1_pd_final.py**.
@@ -69,7 +69,7 @@ This folder contains
 
 
 <p>
-    <img src="/EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure.pdf" width="220" height="240" />
+    <img src="/EMD-Stochastic-Embedding-for-PD-Speech/Paper_Figures/Testing_Procedure_png.png" width="220" height="240" />
 </p>
 
 
