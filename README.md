@@ -16,7 +16,7 @@ The paper has multiple contributions, at both methodological and applied level:
 4. The cross-entropy method is introduced in this context to find an optimal time-frequency partition which is fully data-adaptive. 
 5. A novel solution to speech diagnostics for Parkinson's disease diagnostics and disease progression quantification is developed, which, when compared to state-of-the-art existing methods, is shown to be more sensitive and accurate for both the detection of early onset of Parkinson's disease as well as the quantification of disease progression. The solution is ultimately based on the stochastic EMD representations developed via the MKL GP model representations class.
 
-## Motivations For Parkinson's Detection.
+## Motivations For Parkinson's Detection
 
 ## Organization of the Repository
 The repository is organized in the following folders:
@@ -48,8 +48,8 @@ The folder is organized as follows:
 1. **Notebooks**. This folder contains two notebooks: 
  - **Case_study_motivation_IMFs.ipynb**. This notebook aims to justify why a decomposition method dealing with non-stationarity and non-linearity of the data is highly required to analyse speech signals. The original speech signals' empirical covariance matrices are highly non-stationary; therefore, any standard method would not work in these settings. Moreover, the final goal is to detect fast changes signalling the presence of Parkinson's disease even at very early stages. Therefore, modelling the IMFs, i.e. the basis functions of the EMD, will be a lot more beneficial and provide more reliable and robust results to noise. Note that the second part of the notebook provides some early results conducted wiht fitting a Gaussian Process to the data using standard stationary kernel such as radial basis function (RBF), Square Exponential, etc. (see the following notebook for more information). The provided plots show results of the centered kernel target alignment (CKTA) (for more information about this measure see https://jmlr.org/papers/volume13/cortes12a/cortes12a.pdf) measuring the goodness of fit of these kernels with the data. The reader should not focus on this a lot, but the reasoning behind it is to show how the CKTA does not change across the x-axis providing different hyperparameters for the chosen kernel. Hence, this justifies the need for a more refined one, i.e. the Fisher kernel (see the paper for further details about this).
  - **Hyper_study.ipynb**. This notebook provides the kernel Gram Matrix of standard stationary kernels, which have been used in the second part of the above notebook. This is highly useful to understand how these standard structures will never be able to detect a highly complex structure as the one of the empirical covariances, particularly if fast changes must be detected to identify Parkinson's disease. 
-3. **GLRT_Test_HC_PD_Final.py**.
-4. **S_M1_hc_final.py**.
+3. **GLRT_Test_HC_PD_Final.py**. This python file contains the code required for the GLRT testing procedure applied on SM1. There are multiple functions implemented which provide a package for the testing procedure of this methodology, including the Fisher Kernel computation procedure required to obtain the Fisher score for the final Gram Matrix. We remark that the testing procedure is given as follows:
+4. **S_M1_hc_final.py**.5
 5. **S_M1_pd_final.py**.
 
 
