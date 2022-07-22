@@ -30,7 +30,7 @@ This folder is organized as follows:
 ```diff
 + 2) Data 
 ```
-This folder contains the data used in the experiments on the paper, the code used to extract the required features, i.e. IMFs and IFs, the notebooks used for the data preparation, including segmentation, pre-processing and cleaning. It is organized as follows:
+This folder contains the data used in the experiments of the paper, the code used to extract the required features, i.e. IMFs and IFs, the notebooks used for the data preparation, including segmentation, pre-processing and cleaning. It is organized as follows:
 1. **IMFs_IFs_extraction**. This folder  provides the R code required to extract the IMFs basis functions and the IFs, alias the Instantaneous Frequencies of the extracted IMFs (see the paper for more here).
 2. **ReadText**. The speech signals used in the experiments are provided in this folder. Note that these are taken from https://zenodo.org/record/2867216#.Ytq343ZBzD4. These are speech recordings of healthy and sick individuals carried at King's College University by a mobile device. Two classes of sentences are provided: 1)the patients read a given text, and 2)the patients have a spontaneous dialogue with the interlocutor. In the paper, the first class only was considered for the analysis.
 3. **Data_Anlysis.ipynb**. This notebook is to show an analisys of the provided data and the segments.
@@ -41,15 +41,7 @@ This folder contains the data used in the experiments on the paper, the code use
 ```diff
 + 3) System Model 1 (SM1)
 ```
-This folder contains the code require to implement SM1 in the paper. Remark that for SM1 the Gaussian Process has to be calibrated on observations of the original signal interpolated through a cubic splie and denoted as $\tilde{s}(t)$ (for more details see the pdf of the paper), whose process is denoted as $\widetilde{s}(t)$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via
-$$ 
-S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t)
-$$
-where, $\widetilde{S}(t)$ is treated as a GP
-$$
-\tilde{S}(t)  \sim \mathcal{GP} \left( \mu(t; \bm{\psi}_{\widetilde{S}}); k( t,t'; \bm{\theta}_{\widetilde{S}} )\right),
-$$
-with $$ \mu(t; \bm{\psi}_{\widetilde{S}})$$ and $$k( t,t'; \bm{\theta}_{\widetilde{S}} )$$ representing the mean and kernel functions respectively. The additive error $$\epsilon(t)$$ corresponds to a regression error based on using the spline representation $\widetilde{s}(t)$ for the representation and potentially calibration of the SM1. 
+This folder contains the code required to implement SM1 in the paper. Remark that for SM1 the Gaussian Process has to be calibrated on observations on the original signal interpolated through a cubic splie and denoted as $\tilde{s}(t)$ (for more details see the pdf of the paper), whose process is denoted as $\widetilde{S}(t)$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via $$ S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t) $$ where, $\widetilde{S}(t)$ is treated as a GP $$ \tilde{S}(t)  \sim \mathcal{GP} ( \mu(t; { \boldsymbol \psi}_\widetilde{S} ); k( t,t'; \bm{\theta}_{\widetilde{S}} )\right) $$ with $ \mu(t; \bm{\psi}_{\widetilde{S}})$$ and $k( t,t'; \bm{\theta}_{\widetilde{S}} )$ representing the mean and kernel functions respectively. The additive error $$\epsilon(t)$$ corresponds to a regression error based on using the spline representation $\widetilde{s}(t)$ for the representation and potentially calibration of the SM1. 
 
 
 ```diff
