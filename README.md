@@ -41,7 +41,7 @@ This folder contains the data used in the experiments on the paper, the code use
 ```diff
 + 3) System Model 1 (SM1)
 ```
-This folder contains the code require to implement SM1 in the paper. Remark that for SM1 the Gaussian Process has to be calibrated on observations of the original signal interpolated through a cubic splie and denoted as $$\tilde{s}(t)$$ (for more details see the pdf of the paper), whose process is denoted as $$\widetilde{s}(t)$$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via
+This folder contains the code require to implement SM1 in the paper. Remark that for SM1 the Gaussian Process has to be calibrated on observations of the original signal interpolated through a cubic splie and denoted as $\tilde{s}(t)$ (for more details see the pdf of the paper), whose process is denoted as $\widetilde{s}(t)$. This represents the reference model to the EMD stochastic embeddings given in System Model 2 and System Model 3. Remark that under SM1, the GP model for  $S(t)$ is obtained via
 $$ 
 S(t) \stackrel{d}{=} \widetilde{S}(t) + \epsilon(t)
 $$
