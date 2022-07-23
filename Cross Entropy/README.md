@@ -1,4 +1,4 @@
-# Optimal Time-Frequency EMD Partitions
+# CEM for Optimal Time-Frequency EMD Partitions
 
 In this folder, the class constructing an optimal partition of the time-frequency plane is provided. The RandomParition.py module can be imported and used to compute it.  
 Instructions for the class are given in the file as follows:
