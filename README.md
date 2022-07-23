@@ -18,19 +18,31 @@ The paper has multiple contributions, at both methodological and applied level:
 
 ## Motivations For Parkinson's Detection
 
+The references for this section are provided in the main body of the paper. 
+
+The presented paper adopt the Stochastic Embedding of EMD method into a medical signal processing application based on diagnostics of Parkinson's Disease using patient speech signals. An emerging area of speech analysis is developing in the domain of medical diagnostics as in Parkinson's disease, in Alzheimer's, in Multiple Sclerosis and many others. It has been known for some time by medical practitioners that many symptoms of numerous neurological and motor-neuron diseases may manifest with impacts on speech through enunciation, slurring, delayed recall leading to unvoiced pauses of unusual duration, stutter or other various effects. Many such diseases are degenerative and require continuous monitoring of the patient's status to ensure that treatment regimes adapt to the disease progression for each individual. 
+
+The Parkinson's disease (PD) speech diagnostic analysis undertaken in the application framework of the paper builds upon the background proposed in this paper https://pubmed.ncbi.nlm.nih.gov/31965359/. In this work, the authors introduce an alternative method to detect speech abnormalities caused by Cerebellar Ataxia. This corresponds to impaired coordination due to a dysfunction of the cerebellum, characterised by movement abnormalities such as dysmetria, dysdiadochokinesia, and dyssynergia, amongst others. These abnormalities affect all kinds of movements, including speech, and hence lead to what is termed "ataxic speech". Signs of ataxic speech could be scanning speech ("excess and equal stress"), a reduced speech rate and deviant prosodic (i.e. rhythmical and melodic), modulation of verbal utterances, rhythmical irregularities during (fast) repetitive productions of single or multiple syllables (known as "oral dysdiadochokinesis"), a more significant variation in pitch and loudness and disturbed articulation of both consonants and vowels with reduced intelligibility. 
+
+Several medical conditions could generate ataxic speech; in the proposed paper,the interest is in speech impairment movements caused by PD. PD is a degenerative disorder of the central nervous system resulting from the death of dopamine-containing cells in the substantia nigra, a region of the midbrain. It is the second most common neurodegenerative disorder after Alzheimer's disease and includes both motor (tremor, rigidity, bradykinesia, and impairment of postural reflexes) and non-motor signs (cognitive disorders and sleep ande sensory abnormalities). Several studies reported a 70-90% prevalence of speech impairments once the disease makes its appearance. Both motor symptoms and speech movements abnormalities worsen with the progression of the disease in a nonlinear fashion. At the final stage of the disease, articulation is frequently the most impaired feature. Medical treatments or surgical intervention can alleviate the course of the disease; however, there is no definite cure, and, therefore, an early diagnosis is highly critical to lengthen and improve the patient's life.
+
+This work aims to find an objective tool to identify formant structures efficiently. Formants are resonant frequencies at which the vocal folds vibrate and act as a biometric signature for an individual vocal tract. Therefore, capturing formant structure is equivalent to characterising a specific human being. However, this task is highly challenging since formants' distribution is 1) highly biometric, 2) highly non-stationary, and 3) unknown a priori. The requirement for a data-driven method is of particular interest. The second idea behind this work is that, once formants are efficiently identified, a flexible and data-driven stochastic model will be required to describe substantial variations in their structure, determining the presence of PD. Such an issue is enclosed in this work by the machine learning technique known as Gaussian Process and the kernel structure known as Fisher Kernel. This is presented in detail in the main body of the paper.
+
+Note that the constructed signal processing framework could be extended to study other diseases affecting speech formants and causing abnormalities in the time-frequency plane. The introduced framewrok, particularly the stochastic embedding relying on the cross-entropy method producing the Band Limited IMFs will be highly beneficial within many other applications. 
+
 ## Organization of the Repository
 The repository is organized in the following folders:
 
 ```diff
 + 1) Cross Entropy 
 ```
-The Cross-Entropy method is employed in the paper to compute an optimal partition of the time-frequency plane and deritve the Band Limited IMFs (BLIMFs). To achieve such a result, the idea is to develop a system model (SM3) with basis functions that will be aligne with a traditional notion of bandwidth based analysis (hence the name Band Limited IMFs). This then allows for the construction of a stochastic representation of an EMD signal decomposition that is guaranteed to be characteristic of a particular frequency band. To define the model, one needs first to introduce a partition rule which identifies different local frequency bandwidths. Hence, one first need the formalism of what we refer to as an adaptive partition of the time-frequency plane based on the EMD extracted instantaneous frequencies (IFs) $\omega_1(t), \omega_2(t), \dots, \omega_L(t)$. For further details on such formalisms and the algorithm of the CEM see the main body of the paper. The final output of the CEM will be
+The Cross-Entropy method is employed in the paper to compute an optimal partition of the time-frequency plane and deritve the Band Limited IMFs (BLIMFs). To achieve such a result, the idea is to develop a system model (SM3) with basis functions that will be aligne with a traditional notion of bandwidth based analysis (hence the name Band Limited IMFs). This then allows for the construction of a stochastic representation of an EMD signal decomposition that is guaranteed to be characteristic of a particular frequency band. To define the model, one needs first to introduce a partition rule which identifies different local frequency bandwidths. Hence, one first need the formalism of what we refer to as an adaptive partition of the time-frequency plane based on the EMD extracted instantaneous frequencies (IFs) $\omega_1(t), \omega_2(t), \dots, \omega_L(t)$. For further details on such formalisms and the algorithm of the CEM see the main body of the paper. The final output of the CEM will be therefore an optimal grid able to identify formant structures more efficiently to then detect Parkinson's disease. An example of such an output is given in the following figure
 
+<p align="center">
+    <img src="https://i.postimg.cc/1z66W4t8/Part-Rule-Def-1.png)" width="590" height="460" />
+</p>
 
-
-
-
-This folder contains the code required for the implementation of such an optimal partition of  time-frequency plane as presented in the main paper. The cross-entropy method is implemented and a python class for the algorithm is provided.  
+In this example, the time-frequency plane has been partitioned into 3 optimal frequency bandwidths (partition of the y-axis). The code provided in this folder provides the tool required for the implementation of the CEM algortihm as presented in the main body of the paper and some toy examples to better understand how to use the python class RandomParition.py. Indeed, the CEM is implemented within such a python class.    
 This folder is organized as follows:
 1.  **figures**. This folder containes the figures produced in the notebook Example.ipynb and a gif showing the video of the optimization of the Cross-Entropy method.
 2. **Example.ipynb**. This notebook provides a toy example showing how to use the package and the obtained results.
@@ -124,6 +136,15 @@ The folder contains the Code folder, which is organized as follows:
 3. **GLRT_Test_HC_PD_IMFs_Final.py**. This python file contains the code required for the GLRT testing procedure applied on SM3. There are multiple functions implemented which provide a package for this methodology, including the Fisher Kernel computation procedure required to obtain the Fisher score for the final Gram Matrix computed on the BLIMFs. See the paper for further details.
 4. **IMF_BL_computation.py**. This python file extracts the BLIMFs from the IMFs, once the optimal partitions are computed trough the CEM.
 5. **S_M3_final.py**. This python file provides the procedure for the fitting of the ARIMA models required for the derivation of the Fisher Kernel on the BLIMFs. For more details see the paper.
+
+
+## Dependencies for the CEM method
+
+
+## Cite
+
+If you use this code in your project, please cite:
+
 
 
 
