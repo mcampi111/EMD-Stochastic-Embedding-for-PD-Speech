@@ -1,7 +1,7 @@
 # Optimal Time-Frequency EMD Partitions
 
-In this folder, the class constructing an optimal partition of the time-frequency plane is provided. The RandomParition.py module can be imported and used to compute it. 
-Instructions are given in the file as follows:
+In this folder, the class constructing an optimal partition of the time-frequency plane is provided. The RandomParition.py module can be imported and used to compute it.  
+Instructions for the class are given in the file as follows:
 
 Class to estimate a partition of rectangle Pi = T x I for T = [t_0,t_N] and I = [omega_0,omega_M] into irregular grid of subrectangles given sample of points located in Pi. Etimation based on minmising Kullback–Leibler divergence between two distributions:   
 
@@ -23,7 +23,7 @@ The attributes are:
         
 It is possible to use two algorithms for the Cross Entropy method, relying on two different Important Sampling distributions, being a Multi Normal or a Multinomial, so that both a continuous and a discrete solutions are provided. This can be specified through the selected functions given within the RandomParition.py module.  
    
-It is also possibile to implement a video or a gif of the CEM method. An toy example is given and the generated plots and gif are provided in the folder "figures".
+It is also possibile to implement a video or a gif of the CEM method. A toy example is given and the generated plots and gif are provided in the folder "figures".
 
 
 An Example is provided with a Jupiter Notebook. Note that the video is provided in the figures folder. 
