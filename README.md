@@ -1,7 +1,7 @@
 # Stochastic-Embedding-of-EMD-with-Application-in-Parkinson-s-Disease-Speech
 This repository is linked to the methodology developed in the paper with title
 
-**"Stochastic Embedding of Empirical Mode Decomposition with Application in Parkinson's Disease Speech Diagnostics"**. This paper is provided at this url https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3923615.
+**"Stochastic Embedding of Empirical Mode Decomposition with Application in Parkinson's Disease Speech Diagnostics"**. Tha pdf for the paper is provided in the folder paper, where it is also possibile to find the Supplementary Materials.
 
 ## **Abstract**
 
