@@ -140,6 +140,16 @@ The folder contains the Code folder, which is organized as follows:
 
 ## Dependencies for the CEM method
 
+These are the dependencies to use the CEM method implemented within the RandomPartition.py class:
+
+* numpy
+* os
+* seaborn
+* multiprocessing
+* datetime
+* matplotlib.pyplot
+* matplotlib.animation
+* rc
 
 ## Cite
 
