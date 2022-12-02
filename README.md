@@ -155,7 +155,12 @@ These are the dependencies to use the CEM method implemented within the RandomPa
 
 If you use this code in your project, please cite:
 
-
+@article{campi2022stochastic,
+  title={Stochastic Embedding of Empirical Mode Decomposition with Application in Parkinson's Disease Speech Diagnostics},
+  author={Campi, Marta and Peters, Gareth and Toczydlowska, Dorota},
+  journal={Available at SSRN 4173535},
+  year={2022}
+}
 
 
 
