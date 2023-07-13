@@ -1,7 +1,7 @@
 # Ataxic Speech Disorders and Parkinson's Disease Diagnostics via Stochastic Embedding of Empirical Mode Decomposition
 This repository is linked to the methodology developed in the paper with title
 
-**"Ataxic Speech Disorders and Parkinson's Disease Diagnostics via Stochastic Embedding of Empirical Mode Decomposition"**. Tha pdf for the paper is available at this url https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4173535 or provided in the folder "Paper", where it is also possibile to find the Supplementary Materials.
+**"Ataxic Speech Disorders and Parkinson's Disease Diagnostics via Stochastic Embedding of Empirical Mode Decomposition"**. Tha pdf for the paper is available at this url https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0284667 or provided in the folder "Paper", where it is also possibile to find the Supplementary Materials.
 
 ## **Abstract**
 
