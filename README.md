@@ -1,4 +1,24 @@
 # Ataxic Speech Disorders and Parkinson's Disease Diagnostics via Stochastic Embedding of Empirical Mode Decomposition
+
+> **In short.** Speech changes are an early marker of Parkinson's disease. This repository
+> models speech through a *stochastic* version of Empirical Mode Decomposition (EMD):
+> intrinsic mode functions are represented as Gaussian processes, whose Fisher kernels feed
+> a generalised likelihood-ratio test between healthy and Parkinsonian speech. A
+> cross-entropy search finds a data-adaptive partition of the time–frequency plane
+> (band-limited IMFs) that captures formant structure.
+>
+> **Paper** · Campi, Peters & Toczydlowska (2023), *PLOS ONE* 18(4): e0284667 —
+> [doi:10.1371/journal.pone.0284667](https://doi.org/10.1371/journal.pone.0284667) (open access)
+>
+> **Data** · public MDVR-KCL corpus: mobile-phone voice recordings of people with Parkinson's
+> disease and healthy controls, King's College London (Jaeger, Trivedi & Stadtschnitzer, 2019),
+> [doi:10.5281/zenodo.2867216](https://doi.org/10.5281/zenodo.2867216). Only the read-text task is used.
+>
+> **Stack** · Python (Gaussian processes, GLRT, cross-entropy method) · R (EMD, IMF and
+> instantaneous-frequency extraction)
+>
+> **License** · code MIT; recordings under the terms of the original dataset.
+
 This repository is linked to the methodology developed in the paper with title
 
 **"Ataxic Speech Disorders and Parkinson's Disease Diagnostics via Stochastic Embedding of Empirical Mode Decomposition"**. The pdf for the paper is available at this url https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0284667 or provided in the folder "Paper", where it is also possibile to find the Supplementary Materials.
